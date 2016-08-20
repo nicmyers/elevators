@@ -1,6 +1,6 @@
 
 
-# ${1:Elevator Saga Attept}
+#Elevator Saga Attept
 http://play.elevatorsaga.com/
 
 ## Challenges Completed
