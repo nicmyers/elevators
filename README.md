@@ -38,13 +38,13 @@ There are a few configuration options available. As the improvements are introdu
 
 **Maxload** 
 These control the max load of the elevator before they will go directly to the destination without picking up people on the way.
-'var maxLoad = 0.5;' (Default)
-'var maxLargeLoad = 0.5;' (Default)
+`var maxLoad = 0.5;` (Default)
+`var maxLargeLoad = 0.5;` (Default)
 
 **Elevator Direction Lights** 
 Enable or disable the elevator direction lights. This settings sometimes allows challenges pass.
-'var directionLights = true;' (Default)
+`var directionLights = true;` (Default)
 
 **Enable Logging**
 Set to true to enable console logging of elevator activity.
-'var logging = false;' (Default)
+`var logging = false;` (Default)
