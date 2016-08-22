@@ -10,7 +10,7 @@
     var directionLights = true;
 
     // Enable or disable console logging of elevator and queue activity
-    var logging = false;
+    var logging = true;
 
     //// Defaults
     var floorCount = floors.length - 1;
@@ -209,6 +209,11 @@
         }
       }
 
+      // Update the elevator queue stats area.
+      function updateStats() {
+        $(".elevator-" + index + " .value").text(floorButtonsQueue);
+      }
+
 
       ///////////////////////////////////////////////////////////
       // Whenever the elevator is idle (has no more queued destinations) ...
@@ -232,6 +237,9 @@
       elevator.on("stopped_at_floor", function (floorNum) {
         // Display logging if enabled
         logStatus();
+
+        // Display the queue in the stats area
+        updateStats();
 
         // Update the unified up down queue
         updatePickupQueue();
@@ -265,6 +273,12 @@
     } // End Main Elevator
 
 
+    // Elevator Dispatcher - 
+    function requestDispatcher(direction){
+      
+   }
+
+
     //  Update the next passengers to pick up queue
     function updatePickupQueue() {
       requestedQueue = _.union(upQueue, downQueue);
@@ -287,6 +301,17 @@
       });
     }
 
+
+        var top = 140;
+        function setupStats() {
+          for (var i = 0, len = elevators.length; i < len; i++) {
+            $(".statscontainer").append('<div style="top:' + top + 'px" class="elevator-' + i + '"><span class="key">Elevator ' + i + ' Queue</span><span class="value">-</span>');
+            top = top + 20;
+          }
+        }
+
+
+
     ///////////////////////////////////////////////////////////
     // --------- Power up the Elevator and Floor Panels -----------------------
 
@@ -295,6 +320,8 @@
 
     // Turn on the panels at each floor
     floors.forEach(floorPanels);
+
+    setupStats();
 
   },
   update: function(dt, elevators, floors) {

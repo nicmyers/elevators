@@ -48,3 +48,6 @@ Enable or disable the elevator direction lights. This settings sometimes allows 
 **Enable Logging**
 Set to true to enable console logging of elevator activity.
 `var logging = false;` (Default)
+
+## Changelog
+2016-08-22: Added the individual elevator queues to the stats area. They update everytime an elevator stops.
