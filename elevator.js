@@ -275,8 +275,8 @@
 
     // Elevator Dispatcher - 
     function requestDispatcher(direction){
-      
-   }
+      // Coming soon
+    }
 
 
     //  Update the next passengers to pick up queue
@@ -301,14 +301,14 @@
       });
     }
 
-
-        var top = 140;
-        function setupStats() {
-          for (var i = 0, len = elevators.length; i < len; i++) {
-            $(".statscontainer").append('<div style="top:' + top + 'px" class="elevator-' + i + '"><span class="key">Elevator ' + i + ' Queue</span><span class="value">-</span>');
-            top = top + 20;
-          }
-        }
+    // Queue Stats. Append the individual elevator queue to the stats area.
+    var top = 140;
+    function setupStats() {
+      for (var i = 0, len = elevators.length; i < len; i++) {
+        $(".statscontainer").append('<div style="top:' + top + 'px" class="elevator-' + i + '"><span class="key">Elevator ' + i + ' Queue</span><span class="value">-</span>');
+        top = top + 20;
+      }
+    }
 
 
 
